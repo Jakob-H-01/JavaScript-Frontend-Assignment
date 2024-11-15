@@ -1,0 +1,45 @@
+// Credit to the youtube video "Sass and BEM for beginners" by Coder Coder
+$breakpoints: (
+  "mobile-small": 320px,
+  "mobile": 390px,
+  "mobile-medium": 480px,
+  "mobile-large": 576px,
+  "tablet": 768px,
+  "tablet-medium": 880px,
+  "tablet-large": 992px,
+  "desktop-small": 1200px,
+  "desktop": 1400px,
+  "desktop-large": 1920px,
+);
+// End of help
+
+$font-size-large: 1.8rem;
+$font-size-medium: 1.6rem;
+$font-size-small: 1.4rem;
+$font-size-smallest: 1.2rem;
+
+:root {
+  &,
+  &.light-mode {
+    --color-primary: #6366f1;
+    --color-success: #22c55e;
+    --color-white: #fff;
+    --color-gray: #9397ad;
+    --color-background: #fff;
+    --color-background-section: #f3f6ff;
+    --color-background-item: #fff;
+    --color-background-input: #fff;
+    --color-nav-link: #33354d;
+    --color-download-link: #0b0f19;
+    --color-heading: #0b0f19;
+    --color-paragraph: #565973;
+    --color-paragraph-header: #565973;
+    --color-paragraph-light: #9397ad;
+    --color-button-discover: #fff;
+    --color-icon-box: rgb(99, 102, 241, 0.08);
+    --color-border: #e2e5f1;
+    --color-border-input: #d4d7e5;
+    --color-input-placeholder: #b4b7c9;
+    color-scheme: light;
+  }
+}

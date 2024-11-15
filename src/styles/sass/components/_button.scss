@@ -1,0 +1,142 @@
+.btn-mobile-menu {
+  @include button;
+  width: 3rem;
+  height: 3.6rem;
+}
+
+// Created the dark mode toggle button with help from the youtube video: "Toggle Button In HTML CSS JavaScript | Dark and Light Mode" by Coding Techniques
+.btn-toggle {
+  @include button;
+  width: 4.6rem;
+  height: 2.3rem;
+  background: var(--color-gray);
+  appearance: none;
+  border-radius: 2.3rem;
+  position: relative;
+  outline: none;
+  transition: 0.5s;
+
+  &::before {
+    content: "";
+    width: 2.3rem;
+    height: 2.3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--color-white);
+    border-radius: 50%;
+    transform: scale(0.75);
+    transition: 0.5s;
+  }
+
+  &:checked {
+    background: var(--color-primary);
+
+    &::before {
+      left: 2.25rem;
+    }
+  }
+}
+// End of help
+
+.btn-primary {
+  @include button;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+
+  &--small {
+    border-radius: 0.4rem;
+    padding: 0.9rem 2rem;
+    font-size: $font-size-small;
+    line-height: 130%;
+  }
+
+  &--medium {
+    border-radius: 0.6rem;
+    padding: 1.1rem 2.8rem;
+    font-size: $font-size-small;
+    line-height: 160%;
+  }
+
+  &--large {
+    border-radius: 0 0.8rem 0.8rem 0;
+    padding: 1.3rem 2rem;
+    font-size: $font-size-medium;
+    line-height: 160%;
+
+    @include media(desktop) {
+      padding: 1.3rem 3.2rem;
+    }
+  }
+}
+
+.btn-download {
+  @include button;
+  background-color: var(--color-download-link);
+  padding: 1rem 1.5rem;
+  border-radius: 0.8rem;
+  display: grid;
+  place-items: center;
+
+  @include media(desktop) {
+    padding: 1rem 2.2rem;
+  }
+}
+
+.btn-circle {
+  @include button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  &--small {
+    width: 3.6rem;
+    height: 3.6rem;
+    padding: 1.5rem;
+    background-color: var(--color-background-section);
+  }
+
+  &--large {
+    width: 4.4rem;
+    height: 4.4rem;
+    background-color: var(--color-button-discover);
+    box-shadow: (
+      0 4.4px 12px -1px rgba(#131022, 0.06),
+      0 2px 6.4px -1px rgba(#131022, 0.03)
+    );
+  }
+
+  &--primary {
+    background-color: var(--color-primary);
+  }
+}
+
+.btn-contact {
+  @include button;
+  font-size: $font-size-small;
+  font-weight: 600;
+  line-height: 160%;
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  text-wrap: nowrap;
+  text-decoration: none;
+
+  &--primary {
+    color: var(--color-primary);
+  }
+
+  &--success {
+    color: var(--color-success);
+  }
+
+  &--large {
+    font-size: $font-size-medium;
+    padding-block: 1.3rem;
+  }
+}

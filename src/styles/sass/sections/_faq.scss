@@ -1,0 +1,92 @@
+.section-faq {
+  .wrapper {
+    padding-top: 4.305rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4.25rem;
+
+    @include media(desktop) {
+      padding-top: 11.2rem;
+      gap: 11.2rem;
+    }
+  }
+
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5.6rem;
+    width: 100%;
+
+    @include media(desktop-small) {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: auto 1fr;
+      align-items: flex-start;
+      row-gap: 4rem;
+      column-gap: 10rem;
+    }
+
+    @include media(desktop) {
+      grid-template-columns: 2fr 3fr;
+      column-gap: 8rem;
+    }
+
+    @include media(desktop-large) {
+      grid-template-columns: 5fr 9fr;
+      column-gap: 13.4rem;
+    }
+  }
+
+  .faq-lead {
+    display: flex;
+    flex-direction: column;
+    gap: 1.9rem;
+    text-align: center;
+
+    @include media(desktop-small) {
+      text-align: left;
+      gap: 3.2rem;
+    }
+  }
+
+  .h3 {
+    @include media(tablet) {
+      display: grid;
+    }
+  }
+
+  .faq-container > :nth-child(2) {
+    @include media(desktop-small) {
+      grid-row: span 2;
+    }
+  }
+
+  .btn-primary--medium {
+    @include media(tablet) {
+      display: none;
+    }
+  }
+
+  .contact-boxes {
+    display: none;
+
+    @include media(tablet) {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.4rem;
+    }
+  }
+
+  .contact-box {
+    border: 1px solid var(--color-border);
+    border-radius: 0.8rem;
+    padding: 2.4rem 2.4rem 3.5rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+  }
+}

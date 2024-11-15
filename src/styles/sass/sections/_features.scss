@@ -1,0 +1,72 @@
+.section-features {
+  display: none;
+
+  @include media(desktop) {
+    display: block;
+  }
+
+  .wrapper {
+    display: grid;
+    gap: 8rem;
+    padding-block: 11.2rem;
+
+    @include media(desktop-large) {
+      padding: 11.2rem 11rem;
+    }
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+  }
+
+  :first-child {
+    @include media(desktop) {
+      gap: 16.7rem;
+    }
+
+    @include media(desktop-large) {
+      gap: 14.3rem;
+    }
+  }
+  
+  :last-child {
+    @include media(desktop) {
+      gap: 2.4rem;
+    }
+  }
+
+  .info-box {
+    display: grid;
+    gap: 4rem;
+    justify-items: flex-start;
+  }
+  
+  .bullet-points {
+    display: grid;
+    gap: 1.2rem;
+  }
+  
+  .bullet-point {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .features {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .feature {
+    display: grid;
+    gap: 1.6rem;
+    justify-items: flex-start;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+}
