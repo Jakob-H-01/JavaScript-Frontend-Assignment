@@ -1,0 +1,22 @@
+.breadcrumbs {
+  display: flex;
+  gap: 1.2rem;
+
+  .crumb-container {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+  }
+
+  .crumb-container:first-of-type {
+    gap: 0.4rem;
+  }
+
+  .crumb {
+    text-decoration: none;
+  }
+
+  .crumb-container:last-of-type .crumb {
+    color: var(--color-primary);
+  }
+}

@@ -1,26 +1,28 @@
 import logo from "../assets/logo.svg";
 import icon from "../assets/icon-l.svg";
 import hamburgerLight from "../assets/hamburger-menu-light.svg";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 function Header() {
   return (
     <header className="header">
       <div className="wrapper">
-        <a className="logo" href="#">
+        <Link className="logo" to="/">
           <img src={logo} alt="silicon logo" />
           Silicon
-        </a>
+        </Link>
         <nav className="nav">
           <ul className="nav-links">
             <li>
-              <a href="#app-features" className="nav-link">
+              <HashLink to="/#app-features" className="nav-link">
                 Features
-              </a>
+              </HashLink>
             </li>
             <li>
-              <a href="#" className="nav-link">
+              <Link to="/contact" className="nav-link">
                 Contact
-              </a>
+              </Link>
             </li>
             <li>
               <a className="btn-primary btn-primary--small" href="#">

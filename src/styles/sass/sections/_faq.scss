@@ -64,6 +64,8 @@
   }
 
   .btn-primary--medium {
+    text-decoration: none;
+
     @include media(tablet) {
       display: none;
     }

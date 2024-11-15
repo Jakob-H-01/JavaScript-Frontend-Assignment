@@ -9,6 +9,8 @@
 @import "components/newsletter";
 @import "components/icon-box";
 @import "components/accordion";
+@import "components/breadcrumbs";
+@import "components/contact-form";
 
 @import "layout/wrapper";
 @import "layout/header";
@@ -20,5 +22,7 @@
 @import "sections/features";
 @import "sections/testimonials";
 @import "sections/faq";
+@import "sections/contact";
+@import "sections/location";
 
 @import "themes/dark-mode";

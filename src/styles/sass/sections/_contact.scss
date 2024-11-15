@@ -1,0 +1,100 @@
+.section-contact {
+  background-color: var(--color-background-section);
+  padding-block: 8rem 7rem;
+
+  @include media(tablet) {
+    padding-block: 9.7rem 3rem;
+  }
+
+  @include media(desktop-small) {
+    padding-block: 11.6rem 8rem;
+  }
+
+  @include media(desktop-large) {
+    padding-block: 11.6rem 12.7rem;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+
+  .inner-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include media(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      position: relative;
+      gap: 0;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include media(tablet) {
+      gap: 7.2rem;
+    }
+  }
+
+  .contact-form {
+    @include media(tablet) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      max-width: 300px;
+    }
+
+    @include media(tablet-medium) {
+      max-width: 380px;
+    }
+
+    @include media(tablet-large) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      max-width: none;
+    }
+  }
+
+  .h3 {
+    text-align: center;
+  }
+
+  .contact-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include media(tablet) {
+      gap: 3.2rem;
+    }
+  }
+
+  .contact-box {
+    display: flex;
+    gap: 2.4rem;
+    align-items: flex-start;
+    max-width: 390px;
+  }
+
+  .circle-icon-box {
+    border-radius: 50%;
+    padding: 1.6rem;
+    background-color: var(--color-button-discover);
+    display: grid;
+    place-items: center;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}
