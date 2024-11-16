@@ -169,6 +169,10 @@ body {
   }
 }
 
+.invalid {
+  border-color: red !important;
+}
+
 .btn-mobile-menu {
   cursor: pointer;
   border: none;
