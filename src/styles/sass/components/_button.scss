@@ -4,6 +4,13 @@
   height: 3.6rem;
 }
 
+.btn-close {
+  @include button;
+  padding: 1rem 1.5rem;
+  font-size: 2.5rem;
+  color: var(--color-nav-link);
+}
+
 // Created the dark mode toggle button with help from the youtube video: "Toggle Button In HTML CSS JavaScript | Dark and Light Mode" by Coding Techniques
 .btn-toggle {
   @include button;

@@ -98,4 +98,25 @@
       display: none;
     }
   }
+
+  .btn-close {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 999;
+
+    @include media(tablet) {
+      top: 2.6rem;
+      right: 2.6rem;
+    }
+
+    @include media(tablet-large) {
+      top: 2.9rem;
+      right: 2.9rem;
+    }
+
+    @include media(desktop-small) {
+      display: none;
+    }
+  }
 }

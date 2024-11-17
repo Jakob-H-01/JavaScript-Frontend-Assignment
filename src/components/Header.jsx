@@ -3,8 +3,30 @@ import icon from "../assets/icon-l.svg";
 import hamburgerLight from "../assets/hamburger-menu-light.svg";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { useState } from "react";
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function toggleMenu() {
+    if (isOpen) {
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
+    }
+  }
+
+  function handleDesktop(mediaQuery) {
+    if (mediaQuery.matches) {
+      setIsOpen(false);
+    }
+  }
+
+  const mediaQueryDesktop = window.matchMedia("(min-width: 1200px)");
+  mediaQueryDesktop.addEventListener("change", function () {
+    handleDesktop(mediaQueryDesktop);
+  });
+
   return (
     <header className="header">
       <div className="wrapper">
@@ -13,22 +35,31 @@ function Header() {
           Silicon
         </Link>
         <nav className="nav">
-          <ul className="nav-links">
+          <ul className={isOpen ? "mobile-menu" : "nav-links"}>
             <li>
-              <HashLink to="/#app-features" className="nav-link">
+              <HashLink
+                onClick={() => setIsOpen(false)}
+                to="/#app-features"
+                className="nav-link"
+              >
                 Features
               </HashLink>
             </li>
             <li>
-              <Link to="/contact" className="nav-link">
+              <Link reloadDocument to="/contact" className="nav-link">
                 Contact
               </Link>
             </li>
             <li>
-              <a className="btn-primary btn-primary--small" href="#">
-                <img src={icon} alt="" />
+              <Link
+                className={
+                  isOpen ? "nav-link" : "btn-primary btn-primary--small"
+                }
+                to="/login"
+              >
+                {!isOpen && <img src={icon} alt="" />}
                 Sign in / up
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -41,9 +72,14 @@ function Header() {
           </label>
           <input className="btn-toggle" type="checkbox" id="dark-mode-toggle" />
         </div>
-        <button className="btn-mobile-menu">
+        <button onClick={toggleMenu} className="btn-mobile-menu">
           <img src={hamburgerLight} alt="mobile menu" />
         </button>
+        {isOpen && (
+          <button onClick={toggleMenu} className="btn-close">
+            X
+          </button>
+        )}
       </div>
     </header>
   );
