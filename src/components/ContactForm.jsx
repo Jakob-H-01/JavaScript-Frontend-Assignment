@@ -1,6 +1,8 @@
 import { useRef } from "react";
+import { useDarkMode } from "../context/DarkModeContext";
 
 function ContactForm() {
+  const { isDarkMode } = useDarkMode();
   const fullName = useRef(null);
   const email = useRef(null);
   const specialist = useRef(null);
@@ -80,7 +82,13 @@ function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="contact-form" noValidate>
+    <form
+      onSubmit={handleSubmit}
+      className={
+        isDarkMode ? "contact-form contact-form--dark" : "contact-form"
+      }
+      noValidate
+    >
       <h2 className="h3">Get Online Consultation</h2>
       <div className="input-fields">
         <div className="input-field">
@@ -115,7 +123,7 @@ function ContactForm() {
             ref={specialist}
             name="specialist"
             id="specialist"
-            className="select"
+            className={isDarkMode ? "select select--dark" : "select"}
           >
             <option value=""></option>
             <option value="Psychiatrist">Psychiatrist</option>

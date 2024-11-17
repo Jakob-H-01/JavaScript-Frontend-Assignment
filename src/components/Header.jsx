@@ -1,12 +1,15 @@
 import logo from "../assets/logo.svg";
 import icon from "../assets/icon-l.svg";
 import hamburgerLight from "../assets/hamburger-menu-light.svg";
+import hamburgerDark from "../assets/hamburger-menu-dark.svg";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { useState } from "react";
+import { useDarkMode } from "../context/DarkModeContext";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   function toggleMenu() {
     if (isOpen) {
@@ -70,10 +73,19 @@ function Header() {
           >
             Dark Mode
           </label>
-          <input className="btn-toggle" type="checkbox" id="dark-mode-toggle" />
+          <input
+            onChange={toggleDarkMode}
+            className="btn-toggle"
+            type="checkbox"
+            id="dark-mode-toggle"
+            checked={isDarkMode ? true : false}
+          />
         </div>
         <button onClick={toggleMenu} className="btn-mobile-menu">
-          <img src={hamburgerLight} alt="mobile menu" />
+          <img
+            src={isDarkMode ? hamburgerDark : hamburgerLight}
+            alt="mobile menu"
+          />
         </button>
         {isOpen && (
           <button onClick={toggleMenu} className="btn-close">

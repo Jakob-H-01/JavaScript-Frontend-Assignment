@@ -1,10 +1,16 @@
 import appstoreLight from "../assets/appstore-light.svg";
+import appstoreDark from "../assets/appstore-dark.svg";
 import googleplayLight from "../assets/googleplay-light.svg";
+import googleplayDark from "../assets/googleplay-dark.svg";
 import chevronLight from "../assets/down-arrow-light.svg";
+import chevronDark from "../assets/down-arrow-dark.svg";
 import phoneLeft from "../assets/phone-hero-1.svg";
 import phoneRight from "../assets/phone-hero-2.svg";
+import { useDarkMode } from "../context/DarkModeContext";
 
 function Hero() {
+  const { isDarkMode } = useDarkMode();
+
   return (
     <section className="section-hero">
       <div className="wrapper">
@@ -24,7 +30,7 @@ function Hero() {
             >
               <img
                 className="icon-appstore"
-                src={appstoreLight}
+                src={isDarkMode ? appstoreDark : appstoreLight}
                 alt="appstore"
               />
             </a>
@@ -35,14 +41,17 @@ function Hero() {
             >
               <img
                 className="icon-googleplay"
-                src={googleplayLight}
+                src={isDarkMode ? googleplayDark : googleplayLight}
                 alt="googleplay"
               />
             </a>
           </div>
           <div className="button-container">
             <a className="btn-circle btn-circle--large" href="#app-features">
-              <img src={chevronLight} alt="arrow pointing down" />
+              <img
+                src={isDarkMode ? chevronDark : chevronLight}
+                alt="arrow pointing down"
+              />
             </a>
             <p className="paragraph paragraph--small">Discover more</p>
           </div>

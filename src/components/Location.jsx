@@ -3,11 +3,18 @@ import mapPin from "../assets/bx-map.svg";
 import phone from "../assets/bx-phone-call.svg";
 import clock from "../assets/bx-time-five.svg";
 import fb from "../assets/bxl-facebook-square.svg";
+import fbDark from "../assets/bxl-facebook-square-dark.svg";
 import x from "../assets/bxl-twitter.svg";
+import xDark from "../assets/bxl-twitter-dark.svg";
 import ig from "../assets/bxl-instagram-alt.svg";
+import igDark from "../assets/bxl-instagram-alt-dark.svg";
 import yt from "../assets/bxl-youtube.svg";
+import ytDark from "../assets/bxl-youtube-dark.svg";
+import { useDarkMode } from "../context/DarkModeContext";
 
 function Location() {
+  const { isDarkMode } = useDarkMode();
+
   return (
     <section className="section-location">
       <div className="wrapper">
@@ -63,16 +70,32 @@ function Location() {
           </div>
           <div className="socials">
             <a href="https://www.facebook.com" target="_blank">
-              <img className="icon-box" src={fb} alt="facebook icon" />
+              <img
+                className="icon-box"
+                src={isDarkMode ? fbDark : fb}
+                alt="facebook icon"
+              />
             </a>
             <a href="https://x.com" target="_blank">
-              <img className="icon-box" src={x} alt="x icon" />
+              <img
+                className="icon-box"
+                src={isDarkMode ? xDark : x}
+                alt="x icon"
+              />
             </a>
             <a href="https://www.instagram.com" target="_blank">
-              <img className="icon-box" src={ig} alt="instagram icon" />
+              <img
+                className="icon-box"
+                src={isDarkMode ? igDark : ig}
+                alt="instagram icon"
+              />
             </a>
             <a href="https://www.youtube.com" target="_blank">
-              <img className="icon-box" src={yt} alt="youtube icon" />
+              <img
+                className="icon-box"
+                src={isDarkMode ? ytDark : yt}
+                alt="youtube icon"
+              />
             </a>
           </div>
         </div>

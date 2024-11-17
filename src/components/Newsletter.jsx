@@ -1,8 +1,11 @@
 import notification from "../assets/notification.svg";
 import mailLight from "../assets/mail-light.svg";
+import mailDark from "../assets/mail-dark.svg";
+import { useDarkMode } from "../context/DarkModeContext";
 import { useRef } from "react";
 
 function Newsletter() {
+  const { isDarkMode } = useDarkMode();
   const email = useRef(null);
 
   async function handleSubmit(e) {
@@ -68,7 +71,11 @@ function Newsletter() {
       </div>
       <form onSubmit={handleSubmit} className="form" noValidate>
         <div className="inner-container">
-          <img className="mail" src={mailLight} alt="mail" />
+          <img
+            className="mail"
+            src={isDarkMode ? mailDark : mailLight}
+            alt="mail"
+          />
           <input
             ref={email}
             size="100"

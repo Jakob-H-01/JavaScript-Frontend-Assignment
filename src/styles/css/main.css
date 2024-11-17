@@ -1,6 +1,7 @@
 :root, :root.light-mode {
   --color-primary: #6366f1;
   --color-success: #22c55e;
+  --color-error: #ef4444;
   --color-white: #fff;
   --color-gray: #9397ad;
   --color-background: #fff;
@@ -170,7 +171,7 @@ body {
 }
 
 .invalid {
-  border-color: red !important;
+  border-color: var(--color-error) !important;
 }
 
 .btn-mobile-menu {
@@ -1873,6 +1874,7 @@ body {
 :root.dark-mode {
   --color-primary: #6366f1;
   --color-success: #22c55e;
+  --color-error: #ef4444;
   --color-white: #fff;
   --color-gray: rgba(255, 255, 255, 0.5);
   --color-background: #0b0f19;

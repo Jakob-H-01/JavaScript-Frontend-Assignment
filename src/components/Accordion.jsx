@@ -1,11 +1,14 @@
 import arrowUp from "../assets/faq-up-arrow.svg";
 import arrowDownLight from "../assets/faq-down-arrow-light.svg";
+import arrowDownDark from "../assets/faq-down-arrow-dark.svg";
 import { useEffect, useState } from "react";
+import { useDarkMode } from "../context/DarkModeContext";
 
 function Accordion() {
   const [questions, setQuestions] = useState([]);
   // const [error, setError] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const { isDarkMode } = useDarkMode();
 
   const toggle = (i) => {
     if (isOpen === i) {
@@ -37,7 +40,12 @@ function Accordion() {
     <div className="accordion">
       <ul className="questions">
         {questions.map((item, i) => (
-          <li key={item.id} className={isOpen === i ? "active-question" : ""}>
+          <li
+            key={item.id}
+            className={
+              isDarkMode ? (isOpen === i ? "active-question" : "") : ""
+            }
+          >
             <div className="question">
               <h3 className="h6">{item.title}</h3>
               <button
@@ -49,7 +57,13 @@ function Accordion() {
                 }
               >
                 <img
-                  src={isOpen === i ? arrowUp : arrowDownLight}
+                  src={
+                    isOpen === i
+                      ? arrowUp
+                      : isDarkMode
+                      ? arrowDownDark
+                      : arrowDownLight
+                  }
                   alt="down arrow"
                 />
               </button>
